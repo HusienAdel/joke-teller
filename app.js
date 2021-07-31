@@ -68,7 +68,6 @@ async function SpeechText() {
         .then((data) => {
             jokeText = data.joke;
 
-            console.log(jokeText);
 
             VoiceRSS.speech({
                 key: `${apiKey}`,
@@ -99,22 +98,3 @@ async function SpeechText() {
 
 
 button.addEventListener('click', SpeechText);
-
-
-
-
-let p = new Promise((resolve, reject) => {
-    let a = 2;
-    if (a === 2) {
-        resolve('sucess');
-    } else {
-        reject('sorry');
-    }
-
-});
-
-p.then((msg) => { console.log('then' + msg); })
-    .catch((err) => {
-        console.log('err' + err);
-
-    })
