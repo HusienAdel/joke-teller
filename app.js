@@ -6,7 +6,7 @@ let apUrl = `http://api.voicerss.org/?key=${apiKey}&hl=en-us&src=${customJoke}`;
 const button = document.querySelector('#button');
 const audioElement = document.querySelector('#audio');
 let jokeText;
-
+let jokeContainer = document.querySelector('.jokeText');
 
 
 // VoiceRSS Javascript SDK
@@ -67,7 +67,8 @@ async function SpeechText() {
     const data = response.json()
         .then((data) => {
             jokeText = data.joke;
-
+            jokeContainer.style.display = "block";
+            jokeContainer.textContent = jokeText;
 
             VoiceRSS.speech({
                 key: `${apiKey}`,
